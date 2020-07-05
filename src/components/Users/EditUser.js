@@ -25,13 +25,14 @@ const EditUser = () => {
 
     }
     useEffect(()=>{
+        const loadUser=async ()=>{
+            const result = await axios.get(`http://localhost:4000/users/${id}`);
+            setUser(result.data);
+    
+        }
         loadUser();
     },[]);
-    const loadUser=async ()=>{
-        const result = await axios.get(`http://localhost:4000/users/${id}`);
-        setUser(result.data);
-
-    }
+    
     return (
         <div className="container">
             <div className="w-75 mx-auto shadow p-5">
