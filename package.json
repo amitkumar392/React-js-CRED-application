@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
+    "concurrently": "^5.2.0",
     "eslint-plugin-react-hooks": "0.0.0-7f28234f8",
     "json-server": "^0.16.1",
     "react": "^16.13.1",
@@ -19,17 +20,21 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "json-server": "json-server --watch db.json --port 4000",
+    "start:dev": "concurrently \"npm start\" \"npm run json-server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "plugins": ["react-hooks"],
+    "plugins": [
+      "react-hooks"
+    ],
     "extends": "react-app",
     "rules": {
       "jsx-a11y/anchor-is-valid": "off",
       "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+      "react-hooks/exhaustive-deps": "warn"
     }
   },
   "browserslist": {
