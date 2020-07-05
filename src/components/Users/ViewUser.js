@@ -26,7 +26,7 @@ const ViewUser = () => {
     useEffect(() => {
         loadUser();
  // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [loadUser]);
 
     return (
         <div className="container py-4">
