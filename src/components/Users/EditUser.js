@@ -28,10 +28,11 @@ const EditUser = () => {
         const loadUser=async ()=>{
             const result = await axios.get(`http://localhost:4000/users/${id}`);
             setUser(result.data);
+            
     
         }
         loadUser();
-    },[]);
+    },[id]);
     
     return (
         <div className="container">

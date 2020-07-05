@@ -26,7 +26,7 @@ const ViewUser = () => {
     
         }
         loadUser();
-    }, []);
+    }, [id]);
 
     return (
         <div className="container py-4">
