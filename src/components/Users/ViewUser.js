@@ -25,7 +25,7 @@ const ViewUser = () => {
     
     useEffect(() => {
         loadUser();
-         eslint-disable-next-line-react-hooks/exhaustive-deps
+ // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
