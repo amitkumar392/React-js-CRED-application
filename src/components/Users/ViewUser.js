@@ -12,24 +12,20 @@ const ViewUser = () => {
         website: ""
 
     });
-   
-      async const loadUser= useCallback(
-          () => {
-            const res = await axios.get(`http://localhost:4000/users/${id}`);
-            setUser(res.data);
-          },
-          [],
-      )
     const { id } = useParams();
 
+    const loadUser = async () => {
+        const res = await axios.get(`http://localhost:4000/users/${id}`);
+        setUser(res.data);
+
+    }
     const handleBack=()=>{
         history.push('/');
     }
     
     useEffect(() => {
         loadUser();
- // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [loadUser]);
+    }, []);
 
     return (
         <div className="container py-4">
